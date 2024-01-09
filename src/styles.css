@@ -24,4 +24,22 @@ nav a:first-child {
 nav a:hover {
   background-color: #eee; /* Hover background color */
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.fader {
+  flex: 1;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
