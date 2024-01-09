@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FooterComponent} from "./footer/footer.component";
 import {RouterOutlet} from "@angular/router";
 import {HeaderComponent} from "./header/header.component";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-layout',
@@ -9,7 +10,8 @@ import {HeaderComponent} from "./header/header.component";
   imports: [
     FooterComponent,
     RouterOutlet,
-    HeaderComponent
+    HeaderComponent,
+    CommonModule
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'

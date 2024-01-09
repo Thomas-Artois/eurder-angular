@@ -1,1 +1,27 @@
+/* styles.css or your custom stylesheet */
+
+nav {
+  display: flex;
+  justify-content: flex-end; /* Align links to the right */
+  border-right: 1px solid #ccc; /* Right outline */
+  padding: 10px; /* Add some padding to the navbar */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333; /* Link color */
+  padding: 0 10px; /* Add spacing between links */
+  margin-left: 10px; /* Add some margin to the left of each link */
+  border-left: 1px solid #ccc; /* Left outline for spacing between links */
+}
+
+nav a:first-child {
+  margin-left: 0; /* Remove margin for the first link */
+  border-left: none; /* Remove left outline for the first link */
+}
+
+/* Optionally, you can add hover effects for better user interaction */
+nav a:hover {
+  background-color: #eee; /* Hover background color */
+}
 /* You can add global styles to this file, and also import other style files */
