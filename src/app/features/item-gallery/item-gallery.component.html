@@ -6,11 +6,32 @@
 </head>
 <body>
 
+<header>
+  <div class="logo-group">
+    <img src="assets/img/order-icon.png" alt="order-icon">
+    <span class="logo-title">&Ouml;RDER</span>
+  </div>
+  <nav role="navigation">
+    <a href='#'>Item overview</a>
+    <a href='#'>Create an item</a>
+    <a href='#'>Nav #3</a>
+    <a href='#'>Nav #4</a>
+  </nav>
+</header>
+
 <main>
   <section>
     <h3 class="section-title">Items</h3>
+    <div class="form-group">
+      <label for="name">Search</label>
+      <input id="name"
+             name="name"
+             class="form-control"
+             placeholder="Name starts with..."
+             [(ngModel)]="searchText">
+    </div>
     <div class="items-gallery">
-      <ul class="card-list" *ngFor="let item of items">
+      <ul class="card-list" *ngFor="let item of items | nameFilter: searchText">
         <li class="card">
           <div class="card-title">{{item.name}}</div>
           <img class="card-image" src="assets/img/item-image.png" alt="item image">
@@ -27,61 +48,6 @@
             </div>
           </div>
         </li>
-        <!--        <li class="card">-->
-        <!--          <div class="card-title">Name of Item</div>-->
-        <!--          <img class="card-image" src="../img/item-image.png" alt="item image">-->
-        <!--          <div class="card-footer">-->
-        <!--            <div>Price: &euro; XXX.YY</div>-->
-        <!--            <div class="stock">-->
-        <!--              <span>High</span>-->
-        <!--              <img class="icon" src="../img/warning-icon.png" alt="warning">-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </li>-->
-        <!--        <li class="card">-->
-        <!--          <div class="card-title">Name of Item</div>-->
-        <!--          <img class="card-image" src="../img/item-image.png" alt="item image">-->
-        <!--          <div class="card-footer">-->
-        <!--            <div>Price: &euro; XXX.YY</div>-->
-        <!--            <div class="stock">-->
-        <!--              <span>High</span>-->
-        <!--              <img class="icon" src="../img/warning-icon.png" alt="warning">-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </li>-->
-        <!--        <li class="card">-->
-        <!--          <div class="card-title">Name of Item</div>-->
-        <!--          <img class="card-image" src="../img/item-image.png" alt="item image">-->
-        <!--          <div class="card-footer">-->
-        <!--            <div>Price: &euro; XXX.YY</div>-->
-        <!--            <div class="stock">-->
-        <!--              <span>High</span>-->
-        <!--              <img class="icon" src="../img/warning-icon.png" alt="warning">-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </li>-->
-        <!--        <li class="card">-->
-        <!--          <div class="card-title">Name of Item</div>-->
-        <!--          <img class="card-image" src="../img/item-image.png" alt="item image">-->
-        <!--          <div class="card-footer">-->
-        <!--            <div>Price: &euro; XXX.YY</div>-->
-        <!--            <div class="stock">-->
-        <!--              <span>High</span>-->
-        <!--              <img class="icon" src="../img/warning-icon.png" alt="warning">-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </li>-->
-        <!--        <li class="card">-->
-        <!--          <div class="card-title">Name of Item</div>-->
-        <!--          <img class="card-image" src="../img/item-image.png" alt="item image">-->
-        <!--          <div class="card-footer">-->
-        <!--            <div>Price: &euro; XXX.YY</div>-->
-        <!--            <div class="stock">-->
-        <!--              <span>High</span>-->
-        <!--              <img class="icon" src="../img/warning-icon.png" alt="warning">-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </li>-->
       </ul>
     </div>
   </section>
