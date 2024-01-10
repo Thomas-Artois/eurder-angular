@@ -16,6 +16,10 @@ export class ItemService {
     this.url = `${environment.backendUrl}/item`
   }
 
+  getItem(id: string): Observable<any> {
+    return this.http.get<any>(`this.url + ${id}`);
+  }
+
   getItems(): Observable<any[]> {
     return this.http.get<any[]>(this.url);
   }
