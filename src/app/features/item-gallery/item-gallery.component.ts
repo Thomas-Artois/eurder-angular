@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Item} from "../../core/model/Item";
-import {ItemService} from "../../core/service/item.service";
+import {ItemService} from "../../core/service/item/item.service";
 
 @Component({
   selector: 'app-item-gallery',

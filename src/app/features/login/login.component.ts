@@ -1,28 +1,33 @@
 import { Component } from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  loginForm: FormGroup;
+
   email: string = '';
   password: string = '';
 
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
+  }
+
   onSubmit() {
-    // Add logic to authenticate the user (compare with your backend database)
-    // For simplicity, you can check hard-coded credentials for now
-    if (this.email === 'maarten@gmail.com' && this.password === 'defaultPassword') {
-      // Authentication successful
-      console.log('Login successful');
-    } else {
-      // Authentication failed
-      console.log('Login failed');
+    if (this.loginForm.valid) {
+      this.email = this.loginForm.value.email;
+      this.password = this.loginForm.value.password;
     }
   }
 }
