@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Item} from "../../core/model/Item";
 import {ItemService} from "../../core/service/item.service";
-import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-item-gallery',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './item-gallery.component.html',
   styleUrl: './item-gallery.component.css'
 })
