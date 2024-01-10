@@ -3,10 +3,12 @@ import {ItemGalleryComponent} from "./features/item-gallery/item-gallery.compone
 import {HomeComponent} from "./features/pages/home/home.component";
 import {LoginComponent} from "./features/login/login.component";
 import {ItemCreateComponent} from "./features/item-create/item-create.component";
+import {ItemDetailComponent} from "./features/item-detail/item-detail.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'items', component: ItemGalleryComponent},
-  {path: 'item-create', component: ItemCreateComponent}
+  {path: 'item-create', component: ItemCreateComponent},
+  {path:'item-detail/:id', component: ItemDetailComponent}
 ];
