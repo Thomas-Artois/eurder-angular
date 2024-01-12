@@ -198,3 +198,8 @@ form {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
