@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Items</title>
+</head>
+<body>
+
+<header>
+  <div class="logo-group">
+    <img src="assets/img/order-icon.png" alt="order-icon">
+    <span class="logo-title">&Ouml;RDER</span>
+  </div>
+  <nav role="navigation">
+    <a href='items'>Item overview</a>
+    <a href='#'>Create an item</a>
+    <a href='#'>Nav #3</a>
+    <a href='#'>Nav #4</a>
+  </nav>
+</header>
+
+<main>
+<section>
+  <form #itemForm="ngForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="item.name" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="item.description" required></textarea>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" [(ngModel)]="item.price" required>
+
+    <label for="stockAmount">Stock Amount:</label>
+    <input type="number" id="stockAmount" name="stockAmount" [(ngModel)]="item.stockAmount" required>
+
+    <button type="button" (click)="createItem()">Create Item</button>
+  </form>
+
+</section>
+
+  <!-- Display error message if present -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+
+</main>
+<footer>
+  <div class="logo-group">
+    <img src="assets/img/order-icon.png" alt="order-icon">
+    <span class="logo-title">&Ouml;RDER</span>
+  </div>
+</footer>
+</body>
+</html>

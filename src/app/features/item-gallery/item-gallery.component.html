@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Items</title>
+</head>
+<body>
+
+<header>
+  <div class="logo-group">
+    <img src="assets/img/order-icon.png" alt="order-icon">
+    <span class="logo-title">&Ouml;RDER</span>
+  </div>
+  <nav class="navbar">
+    <a href='items'>Item overview</a>
+    <a href='item-create'>Create an item</a>
+    <a href='#'>Nav #3</a>
+    <a href='#'>Nav #4</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h3 class="section-title">Items</h3>
+    <div class="form-group">
+      <label for="name">Search</label>
+      <input id="name"
+             name="name"
+             class="form-control"
+             placeholder="Name starts with..."
+             [(ngModel)]="searchText">
+    </div>
+    <div class="items-gallery">
+      <ul class="card-list" >
+        <li class="card" *ngFor="let item of items | nameFilter: searchText">
+          <div class="card-title">{{item.name}}</div>
+          <img class="card-image" src="assets/img/item-image.png" alt="item image">
+          <div class="card-footer">
+            <div>Price: &euro; {{item.price}}</div>
+            <div class="stock">
+              <span>Stock amount: </span>
+              <img *ngIf="item.stockAmount <= 2" class="icon"
+                   src="assets/img/warning-icon-red.png" alt="red warning">
+              <img *ngIf="item.stockAmount > 2 && item.stockAmount <= 10" class="icon"
+                   src="assets/img/warning-icon-orange.png" alt="orange warning">
+              <img *ngIf="item.stockAmount > 10" class="icon"
+                   src="assets/img/warning-icon-green.png" alt="green warning">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="logo-group">
+    <img src="assets/img/order-icon.png" alt="order-icon">
+    <span class="logo-title">&Ouml;RDER</span>
+  </div>
+</footer>
+</body>
+</html>
